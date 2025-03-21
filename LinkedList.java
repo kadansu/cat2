@@ -1,4 +1,4 @@
-// Singly Linked List implementation with required methods
+// Singly Linked List implementation with required java  methods
 public class LinkedList {
     // Node class to represent each element in the list
     class Node {
@@ -19,37 +19,46 @@ public class LinkedList {
         head = null;
     }
 
-    // Insert a node at the beginning
+    //  Function to insert a node at the beginning
     public void insertAtBeginning(int data) {
-        Node newNode = new Node(data); // Create new node
-        newNode.next = head;           // Point new node to current head
-        head = newNode;                // Update head to new node
+    // Creating a new node
+        Node newNode = new Node(data);
+        // Point new node to current head 
+        newNode.next = head;
+        // Update head to new node        
+        head = newNode;                
     }
 
-    // Insert a node at the end
+    //  Function to insert a node at the end
     public void insertAtEnd(int data) {
-        Node newNode = new Node(data); // Create new node
-        if (head == null) {            // If list is empty, new node is head
+     // Creating a new node
+        Node newNode = new Node(data);
+        // If list is empty, new node is head 
+        if (head == null) {            
             head = newNode;
             return;
         }
-        Node current = head;           // Traverse to the last node
+        // T1raverse to the last node
+        Node current = head;           
         while (current.next != null) {
             current = current.next;
         }
-        current.next = newNode;        // Link new node at the end
+         // Link new node at the end
+        current.next = newNode;       
     }
 
-    // Delete a node from the beginning
+    //  Function to delete a node from the beginning
     public void deleteFromBeginning() {
-        if (head == null) {            // Check if list is empty
+   // Check if list is empty
+        if (head == null) {          
             System.out.println("List is empty");
             return;
         }
-        head = head.next;              // Move head to next node
+         // Move head to next node
+        head = head.next;             
     }
 
-    // Utility method to print the list (for testing)
+    //  Method to print the list (for testing)
     public void printList() {
         Node current = head;
         while (current != null) {
@@ -62,13 +71,19 @@ public class LinkedList {
     // Main method to test the implementation
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        list.insertAtEnd(1);         // Add 1
-        list.insertAtBeginning(2);   // Add 2 at start
-        list.insertAtEnd(3);         // Add 3 at end
+       // Add 1
+        list.insertAtEnd(1);  
+      // Add 2 at start
+        list.insertAtBeginning(2); 
+          // Add 3 at end
+        list.insertAtEnd(3); 
+        // Output: 2 -> 1 -> 3 -> null       
         System.out.println("Original list:");
-        list.printList();            // Output: 2 -> 1 -> 3 -> null
-        list.deleteFromBeginning();  // Remove 2
+        list.printList(); 
+        // Remove 2           
+        list.deleteFromBeginning();  
         System.out.println("After deleting from beginning:");
-        list.printList();            // Output: 1 -> 3 -> null
+        // Output: 1 -> 3 -> null
+        list.printList();            
     }
 }
